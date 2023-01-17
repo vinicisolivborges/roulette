@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-analyzes-last-numbers',
@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AnalyzesLastNumbersComponent implements OnInit {
 
   @Input() sequenceNumbers: Array<any> = [];
+  @Output() analyzed = new EventEmitter<any>; 
 
   public numero: Number = 0;
   public analyzes: Array<any> = [];
@@ -22,9 +23,7 @@ export class AnalyzesLastNumbersComponent implements OnInit {
     this.numero = this.sequenceNumbers[0].number;
     this.sequenceNumbers.map((content, index) => {
       if(index != 0) {
-        console.log(index)
         if([8,  9, 10, 19, 20, 21].includes(index)){
-          console.log('teste')
           total++;
           content.color === 1 ? vermelho++ : 0;
           content.color === 2 ? preto++ : 0;
@@ -141,6 +140,7 @@ export class AnalyzesLastNumbersComponent implements OnInit {
         ]
       }
     ]
+    this.analyzed.emit(this.analyzes);
   }
 
 }

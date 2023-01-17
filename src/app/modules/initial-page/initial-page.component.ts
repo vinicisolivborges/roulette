@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class InitialPageComponent implements OnInit {
 
-  public sequenceNumbers: Array<Object> = [];
+  public sequenceNumbers: Array<any> = [];
 
   @ViewChild('analyzes') public analyzes: any;
   @ViewChild('analyzes_numbers') public analyzes_numbers: any;
@@ -25,6 +25,18 @@ export class InitialPageComponent implements OnInit {
     this.analyzes_numbers.analyzes_numbers();
     this.analyzes_neighbor.analyzes_numbers();
     this.analyzes_last_numbers.analyzes_numbers();
+  }
+
+  getSugestionLastNumbers = (numbers: Array<any>) => {
+    console.log(numbers)
+  }
+
+  getSugestionNeighbor = (numbers: Array<any>) => {
+    console.log(numbers)
+  }
+
+  getSugestionNumbers = (numbers: Array<any>) => {
+    console.log(numbers)
   }
 
 }

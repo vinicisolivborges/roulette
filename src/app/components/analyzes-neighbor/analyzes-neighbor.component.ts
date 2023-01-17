@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-analyzes-neighbor',
@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AnalyzesNeighborComponent implements OnInit {
 
   @Input() sequenceNumbers: Array<any> = [];
+  @Output() analyzed = new EventEmitter<any>; 
 
   public numero: number = 0;
   public analyzes: Array<any> = [];
@@ -179,6 +180,7 @@ export class AnalyzesNeighborComponent implements OnInit {
         ]
       }
     ]
+    this.analyzed.emit(this.analyzes);
   }
 
 

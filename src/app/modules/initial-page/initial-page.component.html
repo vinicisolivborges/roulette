@@ -1,3 +1,16 @@
+<div class="row m-0">
+    <div 
+      class="p-1" 
+      *ngFor="let number of sequenceNumbers; let i = index"
+      style="width: 2rem; text-align: center;"
+    >
+      <div *ngIf="i < 50"
+        class="rounded"
+        [ngClass]="{ 'bg_red': number.color === 1, 'bg_black': number.color === 2, 'bg_green': number.color === 0 }">
+        <p class="m-0"> {{ number.number }} </p>
+      </div>
+    </div>
+  </div>
 <div class="row mx-2">
     <div class="col-3 p-0">
         <app-analyzes #analyzes
@@ -7,16 +20,19 @@
     <div class="col-3 p-0">
         <app-analyzes-number #analyzes_numbers
             [sequenceNumbers] = "sequenceNumbers"
+            (analyzed)="getSugestionNumbers($event)"
         ></app-analyzes-number>
     </div>
     <div class="col-3 p-0">
         <app-analyzes-neighbor #analyzes_neighbor
             [sequenceNumbers] = "sequenceNumbers"
+            (analyzed)="getSugestionNeighbor($event)"
         ></app-analyzes-neighbor>
     </div>
     <div class="col-3 p-0">
         <app-analyzes-last-numbers #analyzes_last_numbers
             [sequenceNumbers] = "sequenceNumbers"
+            (analyzed)="getSugestionLastNumbers($event)"
         ></app-analyzes-last-numbers>
 </div>
 <div class="row">
