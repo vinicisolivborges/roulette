@@ -1,0 +1,31 @@
+.bg_red {
+  color: white;
+  cursor: pointer;
+  background-color: red;
+}
+
+.bg_black {
+  color: white;
+  cursor: pointer;
+  background-color: black;
+}
+
+.bg_green {
+  color: white;
+  cursor: pointer;
+  background-color: green;
+}
+
+.numbers-select {
+  text-align: center;
+  border: 1px solid gray;
+}
+
+.rounded {
+  border-radius: 1px;
+}
+
+.rounded:hover {
+  background-color: yellow;
+  color: black;
+}

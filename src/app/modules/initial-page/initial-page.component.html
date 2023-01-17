@@ -1,0 +1,19 @@
+<div class="row container">
+    <div class="col-3"> 
+        <div class="col-12">
+            <app-numbers-select
+                (number) = "getNumber($event)"
+            ></app-numbers-select>
+        </div>
+        <div class="col-12">
+            <app-analyzes #analyzes
+                [sequenceNumbers] = "sequenceNumbers"
+            ></app-analyzes>
+        </div>
+    </div>
+    <div class="col-6">
+        <app-analyzes-number #analyzes_numbers
+            [sequenceNumbers] = "sequenceNumbers"
+        ></app-analyzes-number>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="numbers-select">
+  <h4 class="py-3"> Números </h4>
+  <div class="row container m-0">
+    <div 
+      class="col-2 p-1" 
+      *ngFor="let number of numbers"
+    >
+      <div
+        class="rounded"
+        *ngIf="number.number != 0"
+        [ngClass]="{ 'bg_red': number.color === 1, 'bg_black': number.color === 2, 'bg_green': number.color === 0 }"
+        (click)="sendNumber(number)">
+        <p class="m-0"> {{ number.number }} </p>
+      </div>
+    </div>
+    <div class="col-12 p-1">
+      <div
+        class="bg_green rounded"
+        (click)="sendNumber(number0)">
+        <p class="m-0"> {{ number0.number }} </p>
+      </div>
+    </div>
+  </div>
+</div>
+
