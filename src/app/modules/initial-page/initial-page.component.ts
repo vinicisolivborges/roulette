@@ -11,6 +11,7 @@ export class InitialPageComponent implements OnInit {
 
   @ViewChild('analyzes') public analyzes: any;
   @ViewChild('analyzes_numbers') public analyzes_numbers: any;
+  @ViewChild('analyzes_last_numbers') public analyzes_last_numbers: any;
   @ViewChild('analyzes_neighbor') public analyzes_neighbor: any;
 
   constructor() { }
@@ -23,6 +24,7 @@ export class InitialPageComponent implements OnInit {
     this.analyzes.analyzing_numbers();
     this.analyzes_numbers.analyzes_numbers();
     this.analyzes_neighbor.analyzes_numbers();
+    this.analyzes_last_numbers.analyzes_numbers();
   }
 
 }

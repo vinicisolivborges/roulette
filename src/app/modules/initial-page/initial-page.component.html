@@ -1,19 +1,23 @@
-<div class="row m-3">
-    <div class="col-3 mx-1">
+<div class="row mx-2">
+    <div class="col-3 p-0">
         <app-analyzes #analyzes
             [sequenceNumbers] = "sequenceNumbers"
         ></app-analyzes>
     </div>   
-    <div class="col-3 mx-1">
+    <div class="col-3 p-0">
         <app-analyzes-number #analyzes_numbers
             [sequenceNumbers] = "sequenceNumbers"
         ></app-analyzes-number>
     </div>
-    <div class="col-3 mx-1">
+    <div class="col-3 p-0">
         <app-analyzes-neighbor #analyzes_neighbor
             [sequenceNumbers] = "sequenceNumbers"
         ></app-analyzes-neighbor>
     </div>
+    <div class="col-3 p-0">
+        <app-analyzes-last-numbers #analyzes_last_numbers
+            [sequenceNumbers] = "sequenceNumbers"
+        ></app-analyzes-last-numbers>
 </div>
 <div class="row">
     <div class="col-2">

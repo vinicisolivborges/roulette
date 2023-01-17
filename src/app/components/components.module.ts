@@ -5,13 +5,15 @@ import { NumbersSelectComponent } from './numbers-select/numbers-select.componen
 import { AnalyzesComponent } from './analyzes/analyzes.component';
 import { AnalyzesNumberComponent } from './analyzes-number/analyzes-number.component';
 import { AnalyzesNeighborComponent } from './analyzes-neighbor/analyzes-neighbor.component';
+import { AnalyzesLastNumbersComponent } from './analyzes-last-numbers/analyzes-last-numbers.component';
 
 @NgModule({
   declarations: [
     NumbersSelectComponent,
     AnalyzesComponent,
     AnalyzesNumberComponent,
-    AnalyzesNeighborComponent
+    AnalyzesNeighborComponent,
+    AnalyzesLastNumbersComponent
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import { AnalyzesNeighborComponent } from './analyzes-neighbor/analyzes-neighbor
     NumbersSelectComponent,
     AnalyzesComponent,
     AnalyzesNumberComponent,
-    AnalyzesNeighborComponent
+    AnalyzesNeighborComponent,
+    AnalyzesLastNumbersComponent
   ]
 
 })
