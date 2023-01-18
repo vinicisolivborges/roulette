@@ -10,7 +10,8 @@
 	<div class="pt-2" *ngFor="let analyze of analyzes">
 		<!-- <div class="col-12 ">{{ analyze.title }}</div> -->
 		<div *ngFor="let option of analyze.options">
-			<div class="row subtitulo content mx-2" >
+			<div class="row subtitulo content mx-2" 
+			[ngClass]="{'bg_bigger': option.bigger == true }" >
 				<div class="col-4">{{ option.name    }}</div>
 				<div class="col-4">{{ option.amount  }}</div>
 				<div class="col-4">{{ option.porcent }}</div>

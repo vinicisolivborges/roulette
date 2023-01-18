@@ -53,17 +53,20 @@ export class AnalyzesNumberComponent implements OnInit {
           {
             name: 'Vermelho',
             amount: vermelho,
-            porcent: total > 1 ? (vermelho*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (vermelho*100/total).toFixed(2) + '%' : '0%',
+            bigger: vermelho > preto && vermelho > zero ? true : false
           },
           {
             name: 'Preto',
             amount: preto,
-            porcent: total > 1 ? (preto*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (preto*100/total).toFixed(2) + '%' : '0%',
+            bigger: preto > vermelho && preto > zero ? true : false
           },
           {
             name: 'Zero',
             amount: zero,
-            porcent: total > 1 ? (zero*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (zero*100/total).toFixed(2) + '%' : '0%',
+            bigger: zero > vermelho && zero > preto ? true : false
           }
         ]
       },
@@ -73,12 +76,31 @@ export class AnalyzesNumberComponent implements OnInit {
           {
             name: 'Alto',
             amount: alto,
-            porcent: total > 1 ? (alto*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (alto*100/total).toFixed(2) + '%' : '0%',
+            bigger: alto > baixo ? true : false
           },
           {
             name: 'Baixo',
             amount: baixo,
-            porcent: total > 1 ? (baixo*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (baixo*100/total).toFixed(2) + '%' : '0%',
+            bigger: baixo > alto ? true : false
+          }
+        ]
+      },
+      {
+        title: 'Impar/Par',
+        options: [
+          {
+            name: 'Par',
+            amount: par,
+            porcent: total > 1 ? (par*100/total).toFixed(2) + '%' : '0%',
+            bigger: par > impar ? true : false
+          },
+          {
+            name: 'Impar',
+            amount: impar,
+            porcent: total > 1 ? (impar*100/total).toFixed(2) + '%' : '0%',
+            bigger: impar > par ? true : false
           }
         ]
       },
@@ -88,17 +110,20 @@ export class AnalyzesNumberComponent implements OnInit {
           {
             name: '1º Duzia',
             amount: d1,
-            porcent: total > 1 ? (d1*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (d1*100/total).toFixed(2) + '%' : '0%',
+            bigger: d1 > d2 && d1 > d3 ? true : false
           },
           {
             name: '2º Duzia',
             amount: d2,
-            porcent: total > 1 ? (d2*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (d2*100/total).toFixed(2) + '%' : '0%', 
+            bigger: d2 > d1 && d2 > d3 ? true : false
           },
           {
             name: '3º Duzia',
             amount: d3,
-            porcent: total > 1 ? (d3*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (d3*100/total).toFixed(2) + '%' : '0%',
+            bigger: d3 > d1 && d3 > d2 ? true : false
           },
         ]
       },
@@ -108,17 +133,20 @@ export class AnalyzesNumberComponent implements OnInit {
           {
             name: '1º Coluna',
             amount: c1,
-            porcent: total > 1 ? (c1*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (c1*100/total).toFixed(2) + '%' : '0%',
+            bigger: c1 > c2 && c1 > c3 ? true : false
           },
           {
             name: '2º Coluna',
             amount: c2,
-            porcent: total > 1 ? (c2*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (c2*100/total).toFixed(2) + '%' : '0%', 
+            bigger: c2 > c1 && c2 > c3 ? true : false
           },
           {
             name: '3º Coluna',
             amount: c3,
-            porcent: total > 1 ? (c3*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (c3*100/total).toFixed(2) + '%' : '0%',
+            bigger: c3 > c1 && c3 > c2 ? true : false
           }
         ]
       },
@@ -128,17 +156,20 @@ export class AnalyzesNumberComponent implements OnInit {
           {
             name: 'Voisins',
             amount: voi,
-            porcent: total > 1 ? (voi*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (voi*100/total).toFixed(2) + '%' : '0%',
+            bigger: voi > orp && voi > tie ? true : false
           },
           {
             name: 'Orphelins',
             amount: orp,
-            porcent: total > 1 ? (orp*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (orp*100/total).toFixed(2) + '%' : '0%',
+            bigger: orp > voi && orp > tie ? true : false
           },
           {
             name: 'Tiers',
             amount: tie,
-            porcent: total > 1 ? (tie*100/total).toFixed(2) + '%' : '0%'
+            porcent: total > 1 ? (tie*100/total).toFixed(2) + '%' : '0%',
+            bigger: tie > orp && tie > voi ? true : false
           }
         ]
       }

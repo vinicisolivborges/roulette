@@ -12,10 +12,17 @@
     </div>
   </div>
 <div class="row mx-2">
-    <div class="col-3 p-0">
-        <app-analyzes #analyzes
-            [sequenceNumbers] = "sequenceNumbers"
-        ></app-analyzes>
+    <div class="col-3"> 
+        <div class="col-12">
+            <app-numbers-select
+                (number) = "getNumber($event)"
+            ></app-numbers-select>
+        </div>
+        <div class="col-12 p-0">
+            <app-analyzes #analyzes
+                [sequenceNumbers] = "sequenceNumbers"
+            ></app-analyzes>
+        </div>
     </div>   
     <div class="col-3 p-0">
         <app-analyzes-number #analyzes_numbers
@@ -34,11 +41,4 @@
             [sequenceNumbers] = "sequenceNumbers"
             (analyzed)="getSugestionLastNumbers($event)"
         ></app-analyzes-last-numbers>
-</div>
-<div class="row">
-    <div class="col-2">
-        <app-numbers-select
-            (number) = "getNumber($event)"
-        ></app-numbers-select>
-    </div>
 </div>
