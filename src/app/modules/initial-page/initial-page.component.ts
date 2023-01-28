@@ -10,9 +10,11 @@ export class InitialPageComponent implements OnInit {
   public sequenceNumbers: Array<any> = [];
 
   @ViewChild('analyzes') public analyzes: any;
-  @ViewChild('analyzes_numbers') public analyzes_numbers: any;
-  @ViewChild('analyzes_last_numbers') public analyzes_last_numbers: any;
+  @ViewChild('analyzes_number') public analyzes_number: any;
   @ViewChild('analyzes_neighbor') public analyzes_neighbor: any;
+
+  public analyzesNumber: Array<any> = [];
+  public analyzesNeighbor: Array<any> = [];
 
   constructor() { }
 
@@ -22,21 +24,11 @@ export class InitialPageComponent implements OnInit {
   getNumber = (number: Object) => {
     this.sequenceNumbers.unshift(number);
     this.analyzes.analyzing_numbers();
-    this.analyzes_numbers.analyzes_numbers();
-    this.analyzes_neighbor.analyzes_numbers();
-    this.analyzes_last_numbers.analyzes_numbers();
+    this.analyzesNumber = this.analyzes_number.analyzes_numbers();
+    this.analyzesNeighbor = this.analyzes_neighbor.analyzes_neighbors();
   }
 
-  getSugestionLastNumbers = (numbers: Array<any>) => {
-    console.log(numbers)
+  removeNumber = () => {
+    this.sequenceNumbers.shift();
   }
-
-  getSugestionNeighbor = (numbers: Array<any>) => {
-    console.log(numbers)
-  }
-
-  getSugestionNumbers = (numbers: Array<any>) => {
-    console.log(numbers)
-  }
-
 }

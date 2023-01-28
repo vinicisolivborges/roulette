@@ -1,4 +1,6 @@
-<div class="row m-1" style="border: 1px solid gray">
+<div class="row m-1 text-center" style="border: 1px solid gray">
+	<h4 *ngIf="analyzes_neighbor"> Análise Vizinhos </h4>
+	<h4 *ngIf="analyzes_number">Número {{ numero }}</h4>
   <div class="col-12" style="text-align: center">
 		<div class="row titulo">   
 			<div class="col-4">Local</div>
@@ -9,11 +11,38 @@
 	<div class="pt-2" *ngFor="let analyze of analyzes">
 		<!-- <div class="col-12 ">{{ analyze.title }}</div> -->
 		<div *ngFor="let option of analyze.options">
-			<div class="row subtitulo content mx-2">
+			<div class="row subtitulo content mx-2"
+			[ngClass]="{'bg_bigger': option.bigger == true }">
 				<div class="col-4">{{ option.name    }}</div>
 				<div class="col-4">{{ option.amount  }}</div>
 				<div class="col-4">{{ option.porcent }}</div>
 			</div>
 		</div>
   </div>
+	<div *ngIf="analyzes_number">
+	  <div class="row m-1">
+	      <div *ngFor="let number of sequencePull"
+	        class=" col-2 rounded m-1"
+	        [ngClass]="{ 'bg_red': number.color === 1, 'bg_black': number.color === 2, 'bg_green': number.color === 0 }">
+	        <p class="m-0"> {{ number.number }} </p>
+	      </div>
+	  </div>
+	</div>
+	<div *ngIf="analyzes_neighbor">
+	  <div class="row m-1">
+	    <div
+	      class="col-12 container" 
+	      *ngFor="let number of sequencePullNeighbor"
+	    >
+				<h6>Número {{ number.number }}</h6> 
+				<div class="row">
+					<div *ngFor="let n of number.sequenceNumbers"
+						class="col-2 rounded m-1"
+						[ngClass]="{ 'bg_red': n.color === 1, 'bg_black': n.color === 2, 'bg_green': n.color === 0 }">
+						<p class="m-0"> {{ n.number }} </p>
+					</div>
+				</div>
+	    </div>
+	  </div>
+	</div>
 </div>
