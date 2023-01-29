@@ -486,9 +486,15 @@ export class SugestionComponent implements OnInit {
     num = this.bestNumbers.color   != -1 ? num.filter(n => {return n.color   == this.bestNumbers.color  }) : num;
     num = this.bestNumbers.high    != -1 ? num.filter(n => {return n.high    == this.bestNumbers.high   }) : num;
     num = this.bestNumbers.odd     != -1 ? num.filter(n => {return n.odd     == this.bestNumbers.odd    }) : num;
-    num = this.bestNumbers.section != -1 ? num.filter(n => {return n.section == this.bestNumbers.section}) : num;
     num = this.bestNumbers.column?.length ? num.filter(n => {return this.bestNumbers.column?.includes(n.column) }) : num;
     num = this.bestNumbers.dozen?.length  ? num.filter(n => {return this.bestNumbers.dozen ?.includes(n.dozen)  }) : num;
+    if(this.bestNumbers.color   != -1  || 
+      this.bestNumbers.high     != -1  ||
+      this.bestNumbers.odd      != -1  ||
+      this.bestNumbers.column?.length  ||
+      this.bestNumbers.dozen?.length    ) {
+        num = this.bestNumbers.section != -1 ? num.filter(n => {return n.section == this.bestNumbers.section}) : num;
+      }
 
     this.sequencePull = num?.length < 36 ? num : [];
   }
