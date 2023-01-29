@@ -488,11 +488,13 @@ export class SugestionComponent implements OnInit {
     num = this.bestNumbers.odd     != -1 ? num.filter(n => {return n.odd     == this.bestNumbers.odd    }) : num;
     num = this.bestNumbers.column?.length ? num.filter(n => {return this.bestNumbers.column?.includes(n.column) }) : num;
     num = this.bestNumbers.dozen?.length  ? num.filter(n => {return this.bestNumbers.dozen ?.includes(n.dozen)  }) : num;
-    if(this.bestNumbers.color   != -1  || 
-      this.bestNumbers.high     != -1  ||
-      this.bestNumbers.odd      != -1  ||
-      this.bestNumbers.column?.length  ||
-      this.bestNumbers.dozen?.length    ) {
+    if(this.bestNumbers.color   == -1  || 
+      this.bestNumbers.high     == -1  ||
+      this.bestNumbers.odd      == -1  ||
+      !this.bestNumbers.column?.length  ||
+      !this.bestNumbers.dozen?.length    ) {
+        console.log(this.bestNumbers)
+        console.log('oi')
         num = this.bestNumbers.section != -1 ? num.filter(n => {return n.section == this.bestNumbers.section}) : num;
       }
 
