@@ -490,7 +490,7 @@ export class SugestionComponent implements OnInit {
     num = this.bestNumbers.column?.length ? num.filter(n => {return this.bestNumbers.column?.includes(n.column) }) : num;
     num = this.bestNumbers.dozen?.length  ? num.filter(n => {return this.bestNumbers.dozen ?.includes(n.dozen)  }) : num;
 
-    this.sequencePull = num;
+    this.sequencePull = num?.length < 36 ? num : [];
   }
 
 }
