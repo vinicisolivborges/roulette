@@ -21,9 +21,12 @@
 		</div>
 	</div>
 	<div class="col-3 p-0">
-		<app-analyzes #analyzes_number [sequenceNumbers]="sequenceNumbers" [analyzes_number]="true"></app-analyzes>
+		<app-analyzes #analyzes_number [sequenceNumbers]="sequenceNumbers" [analyzes_number]="true" (analyzes_emit)="getAnalyzesNumbers($event)"></app-analyzes>
 	</div>
 	<div class="col-3 p-0">
-		<app-analyzes #analyzes_neighbor [sequenceNumbers]="sequenceNumbers" [analyzes_neighbor]="true"></app-analyzes>
+		<app-analyzes #analyzes_neighbor [sequenceNumbers]="sequenceNumbers" [analyzes_neighbor]="true" (analyzes_emit)="getAnalyzesNeighbor($event)"></app-analyzes>
+	</div>
+	<div class="col-3 p-0">
+		<app-sugestion #sugestion [sequenceNumbers]="sugestions"></app-sugestion>
 	</div>
 </div>

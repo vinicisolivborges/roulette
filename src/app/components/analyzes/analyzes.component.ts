@@ -9,12 +9,16 @@ export class AnalyzesComponent implements OnInit {
   @Input() sequenceNumbers: Array<any> = [];
   @Input() analyzes_number: Boolean = false;
   @Input() analyzes_neighbor: Boolean = false;
+
   @Output() analyzes_emit = new EventEmitter<any>;
 
   public numero: number = 0;
   public analyzes: Array<any> = [];
   public sequencePull: Array<any> = [];
   public sequencePullNeighbor: Array<any> = [];
+
+  public analyzesNumber: Array<any> = [];
+  public analyzesNeighbor: Array<any> = [];
 
   public n = [
     [26, 32], 
@@ -176,7 +180,7 @@ export class AnalyzesComponent implements OnInit {
           },
         ]
       }
-    ]
+    ];
   }
 
   analyzes_numbers = () => {
@@ -334,6 +338,8 @@ export class AnalyzesComponent implements OnInit {
         ]
       }
     ];
+
+    this.analyzes_emit.emit(this.analyzes);
   }
 
   analyzes_neighbors = () => {
@@ -506,5 +512,7 @@ export class AnalyzesComponent implements OnInit {
         ]
       }
     ];
+    
+    this.analyzes_emit.emit(this.analyzes);
   }
 }

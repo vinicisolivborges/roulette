@@ -3,18 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { NumbersSelectComponent } from './numbers-select/numbers-select.component';
 import { AnalyzesComponent } from './analyzes/analyzes.component';
+import { SugestionComponent } from './sugestion/sugestion.component';
 
 @NgModule({
   declarations: [
     NumbersSelectComponent,
-    AnalyzesComponent
+    AnalyzesComponent,
+    SugestionComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
     NumbersSelectComponent,
-    AnalyzesComponent
+    AnalyzesComponent,
+    SugestionComponent
   ]
 
 })
