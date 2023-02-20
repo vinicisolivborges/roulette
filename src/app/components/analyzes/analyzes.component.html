@@ -27,6 +27,16 @@
 	        <p class="m-0"> {{ number.number }} </p>
 	      </div>
 	  </div>
+		<hr>
+		<div class="row m-1">
+			<div *ngFor="let number of region"
+				class=" col-2 rounded m-1"
+				style="position: relative;"
+				[ngClass]="{ 'bg_red': number.color === 1, 'bg_black': number.color === 2, 'bg_green': number.color === 0 }">
+				<p class="m-0"> {{ number.number }} <span class="notif">{{ number.total }}</span></p>
+				
+			</div>
+	</div>
 	</div>
 	<div *ngIf="analyzes_neighbor">
 	  <div class="row m-1">

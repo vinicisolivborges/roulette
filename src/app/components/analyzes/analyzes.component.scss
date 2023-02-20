@@ -31,3 +31,15 @@
 .rounded {
   border-radius: 1px;
 }
+.notif {
+  display: block;
+  position: absolute;
+  top: -9px;
+  right: 0px;
+  line-height: 14px;
+  height: 15px;
+  width: 15px;
+  color: white;
+  border-radius: 10px;
+  background: #069e25;
+}
