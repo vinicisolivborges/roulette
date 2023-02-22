@@ -11,8 +11,16 @@
 	<div class="pt-2" *ngFor="let analyze of analyzes">
 		<!-- <div class="col-12 ">{{ analyze.title }}</div> -->
 		<div *ngFor="let option of analyze.options">
-			<div class="row subtitulo content mx-2"
-			[ngClass]="{'bg_bigger': option.bigger == true }">
+			<div *ngIf="analyzes_number"
+			class="row subtitulo content mx-2"
+			[ngClass]="{'bg_bigger': option.bigger == true, 'bg_smaller': option.bigger == false, 'bg_none': sequencePull.length < 1 }">
+				<div class="col-4">{{ option.name    }}</div>
+				<div class="col-4">{{ option.amount  }}</div>
+				<div class="col-4">{{ option.porcent }}</div>
+			</div>
+			<div *ngIf="analyzes_neighbor"
+			class="row subtitulo content mx-2"
+			[ngClass]="{'bg_bigger': option.bigger == true, 'bg_smaller': option.bigger == false, 'bg_none': sequencePullNeighbor[0].sequenceNumbers.length < 1 && sequencePullNeighbor[1].sequenceNumbers.length < 1}">
 				<div class="col-4">{{ option.name    }}</div>
 				<div class="col-4">{{ option.amount  }}</div>
 				<div class="col-4">{{ option.porcent }}</div>
@@ -28,15 +36,14 @@
 	      </div>
 	  </div>
 		<hr>
-		<div class="row m-1">
+		<!-- <div class="row m-1">
 			<div *ngFor="let number of region"
 				class=" col-2 rounded m-1"
 				style="position: relative;"
 				[ngClass]="{ 'bg_red': number.color === 1, 'bg_black': number.color === 2, 'bg_green': number.color === 0 }">
 				<p class="m-0"> {{ number.number }} <span class="notif">{{ number.total }}</span></p>
-				
 			</div>
-	</div>
+		</div> -->
 	</div>
 	<div *ngIf="analyzes_neighbor">
 	  <div class="row m-1">
