@@ -649,19 +649,19 @@ export class AnalyzesComponent implements OnInit {
             name: '1º Duzia',
             amount: d1,
             porcent: total > 1 ? (d1*100/total).toFixed(2) + '%' : '0%',
-            bigger: d1 > d2 && d1 > d3 ? true : false
+            bigger: d1 > d2 && d1 > d3 ? true : ((d1 <= d2 && d1 > d3) || (d1 <= d3 && d1 > d2)) ? true : false
           },
           {
             name: '2º Duzia',
             amount: d2,
             porcent: total > 1 ? (d2*100/total).toFixed(2) + '%' : '0%', 
-            bigger: d2 > d1 && d2 > d3 ? true : false
+            bigger: d2 > d1 && d2 > d3 ? true : ((d2 <= d1 && d2 > d3) || (d2 <= d3 && d2 > d1)) ? true : false
           },
           {
             name: '3º Duzia',
             amount: d3,
             porcent: total > 1 ? (d3*100/total).toFixed(2) + '%' : '0%',
-            bigger: d3 > d1 && d3 > d2 ? true : false
+            bigger: d3 > d1 && d3 > d2 ? true : ((d3 <= d1 && d3 > d2) || (d3 <= d2 && d3 > d1)) ? true : false
           },
         ]
       },
@@ -672,19 +672,19 @@ export class AnalyzesComponent implements OnInit {
             name: '1º Coluna',
             amount: c1,
             porcent: total > 1 ? (c1*100/total).toFixed(2) + '%' : '0%',
-            bigger: c1 > c2 && c1 > c3 ? true : false
+            bigger: c1 >= c2 && c1 > c3 ? true : ((c1 <= c2 && c1 > c3) || (c1 <= c3 && c1 > c2))  ? true : false
           },
           {
             name: '2º Coluna',
             amount: c2,
             porcent: total > 1 ? (c2*100/total).toFixed(2) + '%' : '0%', 
-            bigger: c2 > c1 && c2 > c3 ? true : false
+            bigger: c2 >= c1 && c2 > c3 ? true : ((c2 <= c1 && c2 > c3) || (c2 <= c3 && c2 > c1)) ? true : false
           },
           {
             name: '3º Coluna',
             amount: c3,
             porcent: total > 1 ? (c3*100/total).toFixed(2) + '%' : '0%',
-            bigger: c3 > c1 && c3 > c2 ? true : false
+            bigger: c3 >= c1 && c3 > c2 ? true : ((c3 <= c1 && c3 > c2) || (c3 <= c2 && c3 > c1))? true : false
           }
         ]
       },
